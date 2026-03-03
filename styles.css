@@ -1,0 +1,155 @@
+/* ===============================
+   Global Reset
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===============================
+   Color Scheme
+   Navy + Teal + White
+================================ */
+:root {
+    --primary: #0a192f;
+    --secondary: #112240;
+    --accent: #64ffda;
+    --text-light: #ffffff;
+}
+
+/* ===============================
+   Navbar Styling
+================================ */
+.navbar {
+    background-color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.logo {
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* ===============================
+   Navigation Menu
+================================ */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Rollover Effects */
+.nav-menu a:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* ===============================
+   Dropdown Menu
+================================ */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary);
+    min-width: 180px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: var(--primary);
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 1rem 0;
+    }
+
+    .nav-menu li {
+        text-align: center;
+    }
+
+    /* Show menu when checkbox checked */
+    #menu-toggle:checked + .hamburger + .nav-menu {
+        display: flex;
+    }
+
+    /* Dropdown in mobile */
+    .dropdown-menu {
+        position: static;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ===============================
+   Section Styling (for demo)
+================================ */
+section {
+    height: 100vh;
+    padding: 2rem;
+}
